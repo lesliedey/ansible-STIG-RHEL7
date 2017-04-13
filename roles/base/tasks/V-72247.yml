@@ -6,4 +6,5 @@
     regexp: '^(?i)permitrootlogin'
     line: 'PermitRootLogin no'
     backup: yes
+  tags: cat2
 

@@ -7,4 +7,5 @@
     insertafter: '^#(?i)printlastlog'
     line: 'PrintLastLog yes'
     backup: yes
+  tags: cat2
 
