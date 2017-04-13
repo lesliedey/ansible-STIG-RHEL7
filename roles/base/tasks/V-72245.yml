@@ -1,0 +1,10 @@
+---
+- name: V-72245
+  lineinfile:
+    #    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
+    regexp: '^(?i)printlastlog'
+    insertafter: '^#(?i)printlastlog'
+    line: 'PrintLastLog yes'
+    backup: yes
+

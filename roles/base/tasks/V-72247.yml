@@ -1,0 +1,9 @@
+---
+- name: V-72247
+  lineinfile:
+    #    path: /etc/ssh/sshd_config
+    dest: /etc/ssh/sshd_config
+    regexp: '^(?i)permitrootlogin'
+    line: 'PermitRootLogin no'
+    backup: yes
+
