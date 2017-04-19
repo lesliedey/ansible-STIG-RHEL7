@@ -1,0 +1,8 @@
+---
+- name: V-71859
+  template: 
+    src: templates/01-banner-message.j2 
+    dest: /etc/dconf/db/local.d/01-banner-message
+    backup: yes
+  tags: cat2
+
