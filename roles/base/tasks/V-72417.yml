@@ -1,8 +1,13 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-72417
+  yum:
+    name: esc
+    state: latest
+  yum:
+    name: pam_pkcs11
+    state: latest
+  yum:
+    name: authconfig-gtk
+    state: latest
   tags: cat2
 

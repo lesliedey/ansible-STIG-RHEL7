@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72293
+  lineinfile:
+    path: /etc/sysctl.conf
+    regexp: 'net.ipv4.conf.all.send_redirects='
+    line: '^net.ipv4.conf.all.send_redirects=0'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

@@ -1,8 +1,10 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-73157
+  lineinfile:
+    path: /etc/dconf/db/local.d/locks/session
+    line: '^/org/gnaome/desktop/session/idle-delay'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

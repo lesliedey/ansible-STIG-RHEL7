@@ -1,0 +1,11 @@
+---
+- name: V-77823
+  lineinfile:
+    path: /usr/lib/systemd/system/rescue.service
+    regexp: 'ExecStart='
+    line: '^ExecStart=-/bin/sh -c "/usr/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"'
+    backup: yes
+    state: present
+    create: yes
+  tags: cat2
+

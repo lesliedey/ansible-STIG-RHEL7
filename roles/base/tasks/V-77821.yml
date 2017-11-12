@@ -1,0 +1,11 @@
+---
+- name: V-77821
+  lineinfile:
+    path: /etc/modprobe.d/nodccp
+    regexp: 'dccp'
+    line: '^install dccp /bin/true'
+    backup: yes
+    state: present
+    create: yes
+  tags: cat2
+

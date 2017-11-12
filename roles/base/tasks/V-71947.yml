@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71947
+  lineinfile:
+    path: /etc/sudoers
+    regexp: 'nopasswd'
     backup: yes
+    state: absent
+    create: yes
+    validate: '/usr/sbin/visudo -cf %s'
   tags: cat2
 

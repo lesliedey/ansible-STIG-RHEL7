@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71929
+  lineinfile:
+    path: /etc/login.defs
+    regexp: 'PASS_MAX_DAYS'
+    line: '^PASS_MAX_DAYS 60'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

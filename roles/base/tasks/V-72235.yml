@@ -1,8 +1,8 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-72235
+  systemd:
+    name: sshd
+    state: started
+    enabled: yes
   tags: cat2
 

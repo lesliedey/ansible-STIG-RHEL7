@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71939
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'PermitEmptyPasswords'
+    line: '^PermitEmptyPasswords no'
     backup: yes
-  tags: cat2
+    state: present
+    create: yes
+  tags: cat1
 

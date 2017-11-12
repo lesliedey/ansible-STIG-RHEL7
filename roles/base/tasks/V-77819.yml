@@ -1,10 +1,10 @@
 ---
-- name: V-71891
+- name: V-77819
   lineinfile:
     path: /etc/dconf/db/local.d/00-screensaver
-    regexp: 'lock-enabled='
+    regexp: 'enable-smartcard-authentication='
     insertafter: '[org/gnome/desktop/screensaver]'
-    line: '^lock-enabled=true'
+    line: '^enable-smartcard-authentication=true'
     backup: yes
     state: present
     create: yes

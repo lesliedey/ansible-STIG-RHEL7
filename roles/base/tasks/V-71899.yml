@@ -1,8 +1,12 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71899
+  lineinfile:
+    path: /etc/dconf/db/local.d/00-screensaver
+    regexp: 'idle-activation-enabled='
+    insertafter: '[org/gnome/desktop/screensaver]'
+    line: '^idle-activation-enabled=true'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

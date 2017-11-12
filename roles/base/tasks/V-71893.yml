@@ -1,8 +1,12 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71893
+  lineinfile:
+    path: /etc/dconf/db/local.d/00-screensaver
+    regexp: 'idle-delay='
+    insertafter: '[org/gnome/desktop/session]'
+    line: '^idle-delay=uint32 900'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72261
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'KerberosAuthentication'
+    line: '^KerberosAuthentication no'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

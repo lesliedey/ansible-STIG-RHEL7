@@ -1,8 +1,13 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72433
+  blockinfile:
+    path: /etc/pam_pkcs11/pam_pkcs11.conf
     backup: yes
+    create: yes
+    state: present
+    block: |
+      cert_policy =ca, ocsp_on, signature;
+      cert_policy =ca, ocsp_on, signature;
+      cert_policy =ca, ocsp_on, signature;
   tags: cat2
 

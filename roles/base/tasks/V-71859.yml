@@ -1,8 +1,12 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71859
+  lineinfile:
+    path: /etc/dconf/db/local.d/01-banner-message
+    regexp: 'banner-message-enabled='
+    insertafter: '[org/gnome/login-secreen]'
+    line: '^banner-message-enabled=true'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

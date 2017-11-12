@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72265
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'UsePrivilegeSeparation'
+    line: '^UsePrivilegeSeparation sandbox'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

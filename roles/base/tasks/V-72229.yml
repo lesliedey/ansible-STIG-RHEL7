@@ -1,8 +1,18 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72229
+  lineinfile:
+    path: /etc/sysconfig/authconfig
+    regexp: 'useldapauth'
+    line: '^USELDAPAUTH = yes'
     backup: yes
+    state: present
+    create: yes
+  lineinfile:
+    path: /etc/pam_ldap.conf
+    regexp: 'cacertdir'
+    line: '^tls_cacertdir /etc/openldap/certs'
+    backup: yes
+    state: present
+    create: yes
   tags: cat2
 

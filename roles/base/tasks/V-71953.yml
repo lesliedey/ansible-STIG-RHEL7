@@ -1,8 +1,12 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71953
+  lineinfile:
+    path: /etc/gdm/custom.conf
+    regexp: 'AutomaticLoginEnable'
+    insertafter: '[daemon]'
+    line: '^AutomaticLoginEnable=false'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

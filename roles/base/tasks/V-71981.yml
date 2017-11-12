@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71981
+  lineinfile:
+    path: /etc/yum.conf
+    regexp: 'repo_gpgcheck='
+    line: '^repo_gpgcheck=1'
     backup: yes
-  tags: cat2
+    state: present
+    create: yes
+  tags: cat1
 

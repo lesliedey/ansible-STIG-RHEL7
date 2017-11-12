@@ -1,8 +1,10 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-72233
+  yum:
+    name: ssh-server
+    state: latest
+  yum:
+    name: ssh-client
+    state: latest
   tags: cat2
 

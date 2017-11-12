@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72303
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'X11Forwarding'
+    line: '^X11Forwarding yes'
     backup: yes
-  tags: cat2
+    state: present
+    create: yes
+  tags: cat1
 

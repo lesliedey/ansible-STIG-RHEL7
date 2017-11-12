@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72237
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'ClientAliveInterval'
+    line: '^ClientAliveInterval 600'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

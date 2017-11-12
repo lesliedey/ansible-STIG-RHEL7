@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72085
+  lineinfile:
+    path: /etc/audisp/audisp-remote.conf
+    regexp: 'enable_krb5 ='
+    line: '^enable_krb5 = yes'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

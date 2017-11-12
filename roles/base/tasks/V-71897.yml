@@ -1,8 +1,7 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-71897
+  yum:
+    name: screen
+    state: latest
   tags: cat2
 

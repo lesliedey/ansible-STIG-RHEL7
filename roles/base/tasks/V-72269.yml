@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72269
+  lineinfile:
+    path: /etc/ntp.conf
+    regexp: 'maxpoll'
+    line: '^maxpoll 10'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

@@ -1,8 +1,9 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-72057
+  systemd:
+    name: kdump
+    state: stopped
+    enabled: no
+    masked: yes
   tags: cat2
 

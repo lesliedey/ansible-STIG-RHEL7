@@ -1,8 +1,12 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71955
+  lineinfile:
+    path: /etc/gdm/custom.conf
+    regexp: 'TimedLoginEnabled'
+    insertafter: '[daemon]'
+    line: '^TimedLoginEnabled=false'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

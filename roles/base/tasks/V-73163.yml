@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-73161
+  lineinfile: 
+    path: /etc/audisp/audisp-remote.conf
+    regexp: 'network_failure_action ='
+    line: '^network_failure_action = single'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71941
+  lineinfile:
+    path: /etc/default/useradd
+    regexp: 'INACTIVE='
+    line: '^INACTIVE=0'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

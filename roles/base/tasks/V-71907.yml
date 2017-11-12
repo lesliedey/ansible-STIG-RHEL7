@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71907
+  lineinfile:
+    path: /etc/security/pwquality.conf
+    regexp: 'dcredit ='
+    line: '^dcredit = -1'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

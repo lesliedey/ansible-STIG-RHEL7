@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72267
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: 'Compression'
+    line: '^Compression delayed'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

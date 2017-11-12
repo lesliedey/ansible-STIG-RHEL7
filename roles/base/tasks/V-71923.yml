@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71923
+  lineinfile:
+    path: /etc/libuser.conf
+    regexp: 'crypt_style ='
+    line: '^crypt_style = sha512'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

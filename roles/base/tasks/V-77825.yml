@@ -1,9 +1,9 @@
 ---
-- name: V-72309
+- name: V-77825
   lineinfile:
     path: /etc/sysctl.conf
-    regexp: 'net.ipv4.ip_forward='
-    line: '^net.ipv4.ip_forward=0'
+    regexp: 'kernel.randomize_va_space'
+    line: '^kernel.randomize_va_space=2'
     backup: yes
     state: present
     create: yes

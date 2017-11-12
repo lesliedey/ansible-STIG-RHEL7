@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-71987
+  lineinfile:
+    path: /etc/yum.conf
+    regexp: 'clean_requirements_on_remove='
+    line: '^clean_requirements_on_remove=1'
     backup: yes
-  tags: cat2
+    state: present
+    create: yes
+  tags: cat3
 

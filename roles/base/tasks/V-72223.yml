@@ -1,8 +1,22 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72223
+  blockinfile:
+    path: /etc/profile
     backup: yes
+    create: yes
+    state: present
+    block: |
+      TMOUT=600
+      #readonly TMOUT
+      #export TMOUT
+  blockinfile:
+    path: /etc/bashrc
+    backup: yes
+    create: yes
+    state: present
+    block: |
+      TMOUT=600
+      readonly TMOUT
+      export TMOUT
   tags: cat2
 

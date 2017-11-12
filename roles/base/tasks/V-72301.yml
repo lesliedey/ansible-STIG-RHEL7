@@ -1,8 +1,7 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
-  tags: cat2
+- name: V-72301
+  yum:
+    name: tftp-server
+    state: absent
+  tags: cat1
 

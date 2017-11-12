@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72093
+  lineinfile:
+    path: /etc/audit/auditd.conf
+    regexp: 'action_mail_acct ='
+    line: '^action_mail_acct = root'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

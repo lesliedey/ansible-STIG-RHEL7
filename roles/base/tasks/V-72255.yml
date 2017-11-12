@@ -1,8 +1,19 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
-    backup: yes
+- name: V-72255
+  file:
+    path: /etc/ssh/ssh_host_dsa_key.pub
+    mode: 0644
+    owner: root
+    group: root
+  file:
+    path: /etc/ssh/ssh_host_rsa_key.pub
+    mode: 0644
+    owner: root
+    group: root
+  file:
+    path: /etc/ssh/ssh_host_key.pub
+    mode: 0644
+    owner: root
+    group: root
   tags: cat2
 
