@@ -1,8 +1,18 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72163
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/etc/sudoers'
+    line: '-w /etc/sudoers -p wa -k privileged-actions'
     backup: yes
+    state: present
+    create: yes
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/etc/sudoers.d'
+    line: '-w /etc/sudoers.d -p wa -k privileged-actions'
+    backup: yes
+    state: present
+    create: yes
   tags: cat2
 

@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72179
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/usr/libexec/openssh/ssh-keysign'
+    line: '-a always,exit -F path=/usr/libexec/openssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

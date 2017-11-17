@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72187
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: 'init_module'
+    line: '-a always,exit -F arch=b64 -S init_module -k module-change'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

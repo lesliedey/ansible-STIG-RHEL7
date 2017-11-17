@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72177
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/usr/sbin/postqueue'
+    line: '-a always,exit -F path=/usr/sbin/postqueue -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-postfix'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

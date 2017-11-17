@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72143
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/var/log/tallylog'
+    line: '-w /var/log/tallylog -p wa -k logins'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

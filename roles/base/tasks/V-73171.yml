@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-73171
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/etc/shadow'
+    line: '-w /etc/shadow -p wa -k audit_rules_usergroup_modification'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

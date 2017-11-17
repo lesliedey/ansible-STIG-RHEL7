@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72193
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/sbin/rmmod'
+    line: '-w /sbin/rmmod -p x -F auid!=4294967295 -k module-change'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

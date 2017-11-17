@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-73173
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/etc/security/opasswd'
+    line: '-w /etc/security/opasswd -p wa -k audit_rules_usergroup_modification'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

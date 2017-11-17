@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72131
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: ' truncate'
+    line: '-a always,exit -F arch=b64 -S truncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 

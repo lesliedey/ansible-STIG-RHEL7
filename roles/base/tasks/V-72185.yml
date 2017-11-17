@@ -1,8 +1,11 @@
 ---
-- name: V-71863
-  template: 
-    src: templates/issue.j2 
-    dest: /etc/issue
+- name: V-72185
+  lineinfile:
+    path: /etc/audit/rules.d/audit.rules
+    regexp: '/sbin/pam_timestamp_check'
+    line: '-a always,exit -F path=/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-pam'
     backup: yes
+    state: present
+    create: yes
   tags: cat2
 
